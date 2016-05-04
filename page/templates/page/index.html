@@ -4,13 +4,24 @@
         <link rel="stylesheet" type="text/css" href="{% static 'page/style.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'page/bower_components/animated-climacons/css/animated-climacons.min.css' %}">
         <script src="{% static 'page/script.js' %}"></script>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     </head>
-    <body>
+    <body onload="startTime()">
         <div id="top">
-            Top
+            <div id="quote">
+                quote
+            </div>
+            <div id="clock">
+                clock
+            </div>
+            <div id="calendar">
+                calendar
+            </div>
         </div>
         <div id="middle">
-            Middle
+            <script type="text/javascript">
+                update();
+            </script>
         </div>
         <div id="bottom">
             <div class="weather-box">

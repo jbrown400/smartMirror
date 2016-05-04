@@ -1,1 +1,14 @@
-<h1>Hi</h1>
+{% load staticfiles %}
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'page/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'page/bower_components/animated-climacons/css/animated-climacons.min.css' %}">
+        <script src="{% static 'page/script.js' %}"></script>
+    </head>
+    <body>
+        <figure>
+            <img src="{% static 'page/bower_components/animated-climacons/climacons/svg-css/cloudDrizzle.svg' %}" alt="" title="CloudDrizzle">
+            <figcaption>SVG without inline CSS: can be animated by a external stylesheet.</figcaption>
+        </figure>
+    </body>
+</head>

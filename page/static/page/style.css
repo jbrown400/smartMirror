@@ -1,8 +1,10 @@
 body {
-    background-color: #000000;
+    background-color: #000000 !important;
 }
 
 img {
     width:400px;
     height:400px;
+    -webkit-filter: invert(1);
+    filter: invert(1);
 }

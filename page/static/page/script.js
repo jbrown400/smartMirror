@@ -40,10 +40,27 @@ update = function() {
         },
         error: function() {
             $("#temp_f").html('Error');
-
         }
     });
 
+    //Gets and sets the forecast
+    $.ajax({
+        url: "http://api.wunderground.com/api/" + WEATHER_KEY + "/forecast/q/MO/Rolla.json",
+        dataType: 'json',
+        timeout: 5000,
+        success: function(data, status) {
+            $.each(data, function(i, thing) {
+                forecast = thing;
+            });
+            iconDisplay("#iconOne", String(forecast.simpleforecast.forecastday[1].conditions));
+            iconDisplay("#iconTwo", String(forecast.simpleforecast.forecastday[2].conditions));
+            iconDisplay("#iconThree", String(forecast.simpleforecast.forecastday[3].conditions));
+            iconDisplay("#iconFour", String(forecast.simpleforecast.forecastday[4].conditions));
+        },
+        error: function() {
+            $("#iconOne").html('Error');
+        }
+    });
 }
 
 
@@ -51,8 +68,48 @@ function iconDisplay(icon, item) {
     dir_name = '/static/page/bower_components/animated-climacons/climacons/svg-css/';
     switch(item) {
         case "Clear":
+            if(icon === "icon"){
+                t = new Date();
+                if(t.getHours() < 19 && t.getHours() > 6)
+                    $(icon).attr('src', dir_name + 'sunFill.svg');
+                else
+                    $(icon).attr('src', dir_name + 'moonFill.svg');
+            }
             $(icon).attr('src', dir_name + 'sunFill.svg');
-              break;
+            break;
+        case "Overcast":
+            $(icon).attr('src', dir_name + 'cloudFill.svg');
+            break;
+        case "Heavy Rain":
+            $(icon).attr('src', dir_name + 'cloudRain.svg');
+            break;
+        case "Chance of Rain":
+        case "Light Rain":
+            $(icon).attr('src', dir_name + 'cloudRainAlt.svg');
+            break;
+
+        case "Heavy Snow":
+            $(icon).attr('src', dir_name + 'cloudSnow.svg');
+            break;
+
+        case "Light Snow":
+            $(icon).attr('src', dir_name + 'cloudSnowAlt.svg');
+            break;
+
+        case "Sunny":
+            $(icon).attr('src', dir_name + 'sunFill.svg');
+            break;
+
+        case "Mostly Cloudy":
+            $(icon).attr('src', dir_name + 'cloudFill.svg');
+            break;
+        case "Partly Cloudy":
+            $(icon).attr('src', dir_name + 'cloudSunFill.svg');
+            break;
+        case "Thunderstorm":
+            $(icon).attr('src', dir_name + 'cloudLightning.svg');
+            break;
+
         default:
             $(icon).html('Error/Other');
     }

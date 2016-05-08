@@ -12,7 +12,7 @@
             <div id="quote">
                 quote
                 <div class="weather-box" style="height:30%">
-                    <img id="icon"></img>
+                    <img id="icon" class="invert"></img>
                     <div class="temp">
                         <span id="temp_f"></span>&deg
                     </div>
@@ -32,7 +32,7 @@
         </div>
         <div id="bottom">
             <div class="weather-box">
-                <img src="{% static 'page/bower_components/animated-climacons/climacons/svg-css/sunFill.svg' %}" alt="" title="CloudDrizzle" class="weather-images">
+                <img id="iconOne" class="invert">
                 <div class="temp">
                     H&deg / L&deg
                 </div>
@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="weather-box">
-                <img src="{% static 'page/bower_components/animated-climacons/climacons/svg-css/cloudDrizzle.svg' %}" alt="" title="CloudDrizzle" class="weather-images">
+                <img id="iconTwo" class="invert">
                 <div class="temp">
                     H&deg / L&deg
                 </div>
@@ -50,8 +50,7 @@
                 </div>
             </div>
             <div class="weather-box">
-                <img src="{% static 'page/bower_components/animated-climacons/climacons/svg-css/cloudFog.svg' %}"
-                    alt="" title="CloudDrizzle" class="weather-images">
+                <img id="iconThree" class="invert">
                 <div class="temp">
                     H&deg / L&deg
                 </div>
@@ -60,18 +59,7 @@
                 </div>
             </div>
             <div class="weather-box">
-                <img src="{% static 'page/bower_components/animated-climacons/climacons/svg-css/cloudLightningMoon.svg' %}"
-                    alt="" title="CloudDrizzle" class="weather-images">
-                <div class="temp">
-                    H&deg / L&deg
-                </div>
-                <div class="precip-wind">
-                    30%  |  15mph
-                </div>
-            </div>
-            <div class="weather-box">
-                <img src="{% static 'page/bower_components/animated-climacons/climacons/svg-css/cloudFog.svg' %}"
-                    alt="" title="CloudDrizzle" class="weather-images">
+                <img id="iconFour" class="invert">
                 <div class="temp">
                     H&deg / L&deg
                 </div>

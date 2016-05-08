@@ -44,9 +44,6 @@ body {
     flex-grow: 6;
 }
 
-#icon {
-    -webkit-filter: invert(1);
-}
 
 .weather-images{
     width:100%;
@@ -59,6 +56,11 @@ body {
 .weather-box {
     height:100%;
     flex-grow: 1;
+}
+
+
+.invert {
+    -webkit-filter: invert(1);
 }
 
 

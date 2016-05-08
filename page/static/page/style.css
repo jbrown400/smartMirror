@@ -31,17 +31,21 @@ body {
 #clock {
     font-size: 100px;
     text-align: right;
-    flex-grow: 3;
+    flex-grow: 2;
 }
 
 
 #quote {
-    flex-grow: 2;
+    flex-grow: 3;
 }
 
 
 #calendar {
     flex-grow: 6;
+}
+
+#icon {
+    -webkit-filter: invert(1);
 }
 
 .weather-images{

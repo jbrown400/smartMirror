@@ -4,12 +4,19 @@
         <link rel="stylesheet" type="text/css" href="{% static 'page/style.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'page/bower_components/animated-climacons/css/animated-climacons.min.css' %}">
         <script src="{% static 'page/script.js' %}"></script>
+        <script src="{% static 'page/keys.js' %}"></script>
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     </head>
     <body onload="startTime()">
         <div id="top">
             <div id="quote">
                 quote
+                <div class="weather-box" style="height:30%">
+                    <img id="icon"></img>
+                    <div class="temp">
+                        <span id="temp_f"></span>&deg
+                    </div>
+                </div>
             </div>
             <div id="clock">
                 clock

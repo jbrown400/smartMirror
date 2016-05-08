@@ -11,7 +11,7 @@ body {
 #top {
     height: 50%;
     width: 100%;
-    -webkit-column-count: 3;
+    display: flex;
 }
 
 
@@ -23,33 +23,38 @@ body {
 #bottom {
     height: 20%;
     width: 100%;
-    -webkit-column-count: 5;
+    display: flex;
+    /*-webkit-column-count: 5;*/
 }
 
 
 #clock {
-
+    font-size: 100px;
+    text-align: right;
+    flex-grow: 3;
 }
 
 
 #quote {
-
+    flex-grow: 2;
 }
 
 
 #calendar {
-
+    flex-grow: 6;
 }
 
 .weather-images{
     width:100%;
     height:50%;
     -webkit-filter: invert(1);
+    filter: invert(1);
 }
 
 
 .weather-box {
     height:100%;
+    flex-grow: 1;
 }
 
 

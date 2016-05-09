@@ -105,6 +105,7 @@ function iconDisplay(icon, item) {
             $(icon).attr('src', dir_name + 'cloudFill.svg');
             break;
 
+        case "Rain":
         case "Heavy Rain":
             $(icon).attr('src', dir_name + 'cloudRain.svg');
             break;

@@ -16,12 +16,12 @@ body {
 
 
 #middle {
-    height: 30%;
+    height: 35%;
     width: 100%:
 }
 
 #bottom {
-    height: 20%;
+    height: 15%;
     width: 100%;
     display: flex;
     /*-webkit-column-count: 5;*/
@@ -47,7 +47,7 @@ body {
 
 #current_temp {
     text-align:center;
-    height: 20%;
+    height: 10%;
     font-size: 40pt;
 }
 

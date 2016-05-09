@@ -6,7 +6,7 @@ function startTime() {
     var s = today.getSeconds();
     m = checkTime(m);
     s = checkTime(s);
-    $("#clock").html(h + ":" + m + ":" + s);
+    $("#clock").html(h + ":" + m);
     var t = setTimeout(startTime, 500);
     if(m == 00 && s == 00){
         location.reload();
@@ -107,7 +107,7 @@ function iconDisplay(icon, item) {
 
         case "Rain":
         case "Heavy Rain":
-            $(icon).attr('src', dir_name + 'cloudRain.svg');
+            $(icon).attr('src', dir_name + 'cloudDrizzle.svg');
             break;
 
         case "Chance of Rain":

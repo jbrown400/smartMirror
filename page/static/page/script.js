@@ -52,14 +52,29 @@ update = function() {
             $.each(data, function(i, thing) {
                 forecast = thing;
             });
-            $("#current_HL").html(forecast.simpleforecast.forecastday[0].high.fahrenheit + "&deg" + "/" + 
-                    forecast.simpleforecast.forecastday[0].low.fahrenheit + "&deg");
-
             iconDisplay("#iconOne", String(forecast.simpleforecast.forecastday[0].conditions));
-            
+            $("#HLOne").html(forecast.simpleforecast.forecastday[0].high.fahrenheit + "&deg" + "/" +
+                    forecast.simpleforecast.forecastday[0].low.fahrenheit + "&deg");
+            $("#PWOne").html(forecast.simpleforecast.forecastday[0].pop + "%" + " | " +
+                    forecast.simpleforecast.forecastday[0].avewind.mph + "mph");
+
             iconDisplay("#iconTwo", String(forecast.simpleforecast.forecastday[1].conditions));
+            $("#HLTwo").html(forecast.simpleforecast.forecastday[1].high.fahrenheit + "&deg" + "/" +
+                    forecast.simpleforecast.forecastday[1].low.fahrenheit + "&deg");
+            $("#PWTwo").html(forecast.simpleforecast.forecastday[1].pop + "%" + " | " +
+                    forecast.simpleforecast.forecastday[1].avewind.mph + "mph");
+
             iconDisplay("#iconThree", String(forecast.simpleforecast.forecastday[2].conditions));
+            $("#HLThree").html(forecast.simpleforecast.forecastday[2].high.fahrenheit + "&deg" + "/" +
+                    forecast.simpleforecast.forecastday[2].low.fahrenheit + "&deg");
+            $("#PWThree").html(forecast.simpleforecast.forecastday[2].pop + "%" + " | " +
+                    forecast.simpleforecast.forecastday[2].avewind.mph + "mph");
+
             iconDisplay("#iconFour", String(forecast.simpleforecast.forecastday[3].conditions));
+            $("#HLFour").html(forecast.simpleforecast.forecastday[3].high.fahrenheit + "&deg" + "/" +
+                    forecast.simpleforecast.forecastday[3].low.fahrenheit + "&deg");
+            $("#PWFour").html(forecast.simpleforecast.forecastday[3].pop + "%" + " | " +
+                    forecast.simpleforecast.forecastday[3].avewind.mph + "mph");
         },
         error: function() {
             $("#iconOne").html('Error');

@@ -52,7 +52,11 @@ update = function() {
             $.each(data, function(i, thing) {
                 forecast = thing;
             });
+            $("#current_HL").html(forecast.simpleforecast.forecastday[0].high.fahrenheit + "&deg" + "/" + 
+                    forecast.simpleforecast.forecastday[0].low.fahrenheit + "&deg");
+
             iconDisplay("#iconOne", String(forecast.simpleforecast.forecastday[0].conditions));
+            
             iconDisplay("#iconTwo", String(forecast.simpleforecast.forecastday[1].conditions));
             iconDisplay("#iconThree", String(forecast.simpleforecast.forecastday[2].conditions));
             iconDisplay("#iconFour", String(forecast.simpleforecast.forecastday[3].conditions));
@@ -78,12 +82,15 @@ function iconDisplay(icon, item) {
             }
             $(icon).attr('src', dir_name + 'sunFill.svg');
             break;
+
         case "Overcast":
             $(icon).attr('src', dir_name + 'cloudFill.svg');
             break;
+
         case "Heavy Rain":
             $(icon).attr('src', dir_name + 'cloudRain.svg');
             break;
+
         case "Chance of Rain":
         case "Light Rain":
             $(icon).attr('src', dir_name + 'cloudRainAlt.svg');
@@ -104,9 +111,11 @@ function iconDisplay(icon, item) {
         case "Mostly Cloudy":
             $(icon).attr('src', dir_name + 'cloudFill.svg');
             break;
+
         case "Partly Cloudy":
             $(icon).attr('src', dir_name + 'cloudSunFill.svg');
             break;
+
         case "Chance of a Thunderstorm":
         case "Thunderstorm":
             $(icon).attr('src', dir_name + 'cloudLightning.svg');

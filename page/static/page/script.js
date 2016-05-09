@@ -52,10 +52,10 @@ update = function() {
             $.each(data, function(i, thing) {
                 forecast = thing;
             });
-            iconDisplay("#iconOne", String(forecast.simpleforecast.forecastday[1].conditions));
-            iconDisplay("#iconTwo", String(forecast.simpleforecast.forecastday[2].conditions));
-            iconDisplay("#iconThree", String(forecast.simpleforecast.forecastday[3].conditions));
-            iconDisplay("#iconFour", String(forecast.simpleforecast.forecastday[4].conditions));
+            iconDisplay("#iconOne", String(forecast.simpleforecast.forecastday[0].conditions));
+            iconDisplay("#iconTwo", String(forecast.simpleforecast.forecastday[1].conditions));
+            iconDisplay("#iconThree", String(forecast.simpleforecast.forecastday[2].conditions));
+            iconDisplay("#iconFour", String(forecast.simpleforecast.forecastday[3].conditions));
         },
         error: function() {
             $("#iconOne").html('Error');
@@ -68,12 +68,13 @@ function iconDisplay(icon, item) {
     dir_name = '/static/page/bower_components/animated-climacons/climacons/svg-css/';
     switch(item) {
         case "Clear":
-            if(icon === "icon"){
+            if(icon === "#icon"){
                 t = new Date();
                 if(t.getHours() < 19 && t.getHours() > 6)
                     $(icon).attr('src', dir_name + 'sunFill.svg');
                 else
                     $(icon).attr('src', dir_name + 'moonFill.svg');
+                break;
             }
             $(icon).attr('src', dir_name + 'sunFill.svg');
             break;
@@ -106,6 +107,7 @@ function iconDisplay(icon, item) {
         case "Partly Cloudy":
             $(icon).attr('src', dir_name + 'cloudSunFill.svg');
             break;
+        case "Chance of a Thunderstorm":
         case "Thunderstorm":
             $(icon).attr('src', dir_name + 'cloudLightning.svg');
             break;

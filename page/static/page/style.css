@@ -84,7 +84,7 @@ body {
 
 .temp {
     height: 20%;
-    font-size: 25pt;
+    font-size: 20pt;
     text-align: center;
     padding-top: 5%;
 }
@@ -92,7 +92,7 @@ body {
 
 .precip-wind {
     height: 20%;
-    font-size: 20pt;
+    font-size: 15pt;
     text-align: center;
     vertical-align: middle;
 }

@@ -63,18 +63,21 @@ update = function() {
                     forecast.simpleforecast.forecastday[1].low.fahrenheit + "&deg");
             $("#PWTwo").html(forecast.simpleforecast.forecastday[1].pop + "%" + " | " +
                     forecast.simpleforecast.forecastday[1].avewind.mph + "mph");
+            $("#forecastTwo").html(forecast.simpleforecast.forecastday[1].date.weekday);
 
             iconDisplay("#iconThree", String(forecast.simpleforecast.forecastday[2].conditions));
             $("#HLThree").html(forecast.simpleforecast.forecastday[2].high.fahrenheit + "&deg" + "/" +
                     forecast.simpleforecast.forecastday[2].low.fahrenheit + "&deg");
             $("#PWThree").html(forecast.simpleforecast.forecastday[2].pop + "%" + " | " +
                     forecast.simpleforecast.forecastday[2].avewind.mph + "mph");
+            $("#forecastThree").html(forecast.simpleforecast.forecastday[2].date.weekday);
 
             iconDisplay("#iconFour", String(forecast.simpleforecast.forecastday[3].conditions));
             $("#HLFour").html(forecast.simpleforecast.forecastday[3].high.fahrenheit + "&deg" + "/" +
                     forecast.simpleforecast.forecastday[3].low.fahrenheit + "&deg");
             $("#PWFour").html(forecast.simpleforecast.forecastday[3].pop + "%" + " | " +
                     forecast.simpleforecast.forecastday[3].avewind.mph + "mph");
+            $("#forecastFour").html(forecast.simpleforecast.forecastday[3].date.weekday);
         },
         error: function() {
             $("#iconOne").html('Error');

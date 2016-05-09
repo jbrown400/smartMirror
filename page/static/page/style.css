@@ -29,7 +29,7 @@ body {
 
 
 #clock {
-    font-size: 100px;
+    font-size: 80px;
     text-align: right;
     flex-grow: 2;
 }
@@ -76,11 +76,17 @@ body {
 }
 
 
+.day {
+    text-align: center;
+    font-size: 20pt;
+}
+
+
 .temp {
-    height: 30%;
+    height: 20%;
     font-size: 25pt;
     text-align: center;
-    padding-top: 15%;
+    padding-top: 5%;
 }
 
 

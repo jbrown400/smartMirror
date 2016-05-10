@@ -88,6 +88,7 @@ update = function() {
 
     $.getJSON('/static/page/quotes.json', function(data) {
         $("#quote").html(data.quotes[0].text);
+        $("#author").html(data.quotes[0].author);
     });
 }
 

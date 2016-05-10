@@ -31,17 +31,17 @@ body {
 #clock {
     font-size: 80px;
     text-align: right;
-    flex-grow: 2;
+    flex: 3;
 }
 
 
 #weather-quote {
-    flex-grow: 3;
+    flex: 4;
 }
 
 
 #calendar {
-    flex-grow: 6;
+    flex: 4;
 }
 
 
@@ -59,9 +59,21 @@ body {
 }
 
 
+#quote-box {
+    margin: 5%;
+}
+
 #quote {
-    font-size:20px;
-    height: 20%;
+    font-size: 20pt;
+    text-align: center;
+}
+
+
+#author {
+    font-size: 15pt;
+    font-style: italic;
+    text-align: right;
+    padding-top: 4%;
 }
 
 

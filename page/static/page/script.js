@@ -87,8 +87,8 @@ update = function() {
     });
 
     $.getJSON('/static/page/quotes.json', function(data) {
-        $("#quote").html(data.quotes[0].text);
-        $("#author").html(data.quotes[0].author);
+        $("#quote").html(data.quotes[Math.floor(Math.random() * data.quotes.length)].text);
+        $("#author").html(data.quotes[Math.floor(Math.random() * data.quotes.length)].author);
     });
 }
 

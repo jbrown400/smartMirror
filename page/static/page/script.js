@@ -22,7 +22,9 @@ update = function() {
     var current = [];
     var forecast = [];
     var activity = [];
-    var monthNames = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
+    var monthNames = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var quotes = [];
+    var rand = Math.floor((Math.random() * 10) + 1)
     g = new Date();
     gTime = monthNames[g.getMonth()] + "-" + g.getDate();
     //Gets and sets current conditions
@@ -83,9 +85,13 @@ update = function() {
             $("#iconOne").html('Error');
         }
     });
+
+    $.getJSON('/static/page/quotes.json', function(data) {
+        $("#quote").html(data.quotes[0].text);
+    });
 }
 
-
+// Receives an id and a weather condition and sets the icon
 function iconDisplay(icon, item) {
     dir_name = '/static/page/bower_components/animated-climacons/climacons/svg-css/';
     switch(item) {

@@ -35,7 +35,7 @@ body {
 }
 
 
-#quote {
+#weather-quote {
     flex-grow: 3;
 }
 
@@ -56,6 +56,12 @@ body {
     text-align: center;
     height: 10%;
     font-size: 30pt;
+}
+
+
+#quote {
+    font-size:20px;
+    height: 20%;
 }
 
 

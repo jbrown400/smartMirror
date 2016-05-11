@@ -42,15 +42,11 @@ body {
 
 #right-side {
     flex: 4;
-    border: 2px solid red;
 }
 
 
 #calendar {
-    border: 2px solid blue;
-
     height: 50%;
-
 }
 
 
@@ -60,14 +56,35 @@ body {
 }
 
 
-#days {
+#week-days {
     display: flex;
 }
 
 
-#day{
+.week-day{
     flex: 1;
     font-size: 14pt;
+    text-align: center;
+}
+
+
+#weeks {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.week-row {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.week-col {
+    flex: 1;
 }
 
 #current_temp {

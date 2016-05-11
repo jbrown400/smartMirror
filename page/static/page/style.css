@@ -40,10 +40,33 @@ body {
 }
 
 
-#calendar {
+#right-side {
     flex: 4;
+    border: 2px solid red;
 }
 
+
+#calendar {
+    border: 2px solid blue;
+
+    height: 50%;
+
+}
+
+
+#days {
+    display: flex;
+}
+
+
+#month {
+    text-align: center;
+}
+
+
+#day{
+    flex: 1;
+}
 
 #current_temp {
     text-align:center;

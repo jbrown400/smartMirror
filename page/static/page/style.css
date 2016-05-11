@@ -58,6 +58,7 @@ body {
 
 #week-days {
     display: flex;
+    padding-bottom: 5%;
 }
 
 
@@ -85,7 +86,14 @@ body {
 
 .week-col {
     flex: 1;
-    margin-top: 40%;
+    padding-top: 30%;
+}
+
+
+#current-day {
+    background-color: #FFFFFF;
+    color: #000000;
+    border-radius: 60%;
 }
 
 #current_temp {

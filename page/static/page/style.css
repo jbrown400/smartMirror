@@ -30,7 +30,7 @@ body {
 
 #clock {
     font-size: 80px;
-    text-align: right;
+    text-align: center;
     flex: 3;
 }
 
@@ -54,18 +54,20 @@ body {
 }
 
 
+#month {
+    text-align: center;
+    font-size: 20pt;
+}
+
+
 #days {
     display: flex;
 }
 
 
-#month {
-    text-align: center;
-}
-
-
 #day{
     flex: 1;
+    font-size: 14pt;
 }
 
 #current_temp {

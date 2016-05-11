@@ -85,19 +85,14 @@ body {
 
 .week-col {
     flex: 1;
+    margin-top: 40%;
 }
 
 #current_temp {
     text-align:center;
     height: 10%;
     font-size: 40pt;
-}
-
-
-#current_HL {
-    text-align: center;
-    height: 10%;
-    font-size: 30pt;
+    margin-top: -15%;
 }
 
 
@@ -116,6 +111,11 @@ body {
     font-size: 15pt;
     text-align: right;
     padding-top: 4%;
+}
+
+
+#icon {
+    margin-top: -15%;
 }
 
 

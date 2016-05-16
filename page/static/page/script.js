@@ -98,6 +98,8 @@ update = function() {
         $("#quote").html("\"" + data.quotes[q].text + "\"");
         $("#author").html(data.quotes[q].author);
     });
+
+    calendar();
 }
 
 // Receives an id and a weather condition and sets the icon
@@ -158,4 +160,27 @@ function iconDisplay(icon, item) {
         default:
             $(icon).html('Error/Other');
     }
+}
+
+
+/* Gets and sets all basic calendar information (current day, month, days in a 
+ * month, etc.
+ */
+function calendar(){
+    //Array to houes month names since .getMonth() returns a number
+    var monthNames = ["January", "February", "March", "April", "May", "June", 
+            "July", "August", "September", "October", "November", "December"];
+    //Array to house weekday names since getDay() returns a number
+    var weekdayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
+            "Friday", "Saturday"];
+    var date = new Date();
+    //Get current month and apply it to month tag.
+    currentMonth = date.getMonth();
+    $("#month").html(monthNames[currentMonth]);
+
+
+    /* When generating tags (via a loop) to represent days, give them an id of
+     * the date so the Google Calendar function will be able to easily mark 
+     * event dates.
+     */
 }

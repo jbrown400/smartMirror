@@ -174,11 +174,49 @@ function calendar(){
     var weekdayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
             "Friday", "Saturday"];
     var date = new Date();
-    //Get current month and apply it to month tag.
+    //Get current day, month, year
+    currentDay = date.getDay();
     currentMonth = date.getMonth();
+    currentYear = date.getFullYear();
+
+    //Apply current month to month tag
     $("#month").html(monthNames[currentMonth]);
 
+    //Get the weekday of the first day of the month
+    dateFirstDay = new Date(currentYear, currentMonth, 1);
+    $("#current-day").html(weekdayNames[dateFirstDay.getDay()]);
 
+
+    for (i = 0; i < 7; i++){
+        var row = document.createElement('div');
+        row.className="week-col";
+        document.getElementById("weeks").appendChild(row);
+        // for loop for days
+        for (i = 0; i < 5; i++){
+            var day = document.createElement('div');
+            day.className="week-col";
+            day.innerHTML = "5";
+            row.appendChild(day);
+        }
+    }
+        
+    /*
+    // for loop for weeks
+    for (i = 0; i < 7; i++){
+        var row = document.createElement('div');
+        row.className="week-row";
+        document.getElementById("weeks").appendChild(row);
+        // for loop for days
+        for (i = 0; i < 5; i++){
+            var day = document.createElement('div');
+            day.className="week-col";
+            day.innerHTML = "5";
+            row.appendChild(day);
+        }
+    }*/
+    /* Start a loop, creating empty tags (with correct classes/ids) and when the first day and weekday match the current itteration
+     * start adding in relevant information.
+    */
     /* When generating tags (via a loop) to represent days, give them an id of
      * the date so the Google Calendar function will be able to easily mark 
      * event dates.

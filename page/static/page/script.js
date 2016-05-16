@@ -54,6 +54,9 @@ update = function() {
             $.each(data, function(i, thing) {
                 forecast = thing;
             });
+            /*For each of these lines, the id of a tag is found (e.g. HLOne) 
+             *and then a segment of the forecast data is assigned to that tag.
+             */
             iconDisplay("#iconOne", String(forecast.simpleforecast.forecastday[0].conditions));
             $("#HLOne").html(forecast.simpleforecast.forecastday[0].high.fahrenheit + "&deg" + "/" +
                     forecast.simpleforecast.forecastday[0].low.fahrenheit + "&deg");
@@ -86,6 +89,10 @@ update = function() {
         }
     });
 
+    /* quotes.json is a json file I made that has, in json object notation, 
+     * a list of quotes are their authors. This block of code randomly selects
+     * one of the quotes to display (using the getJSON function).
+     */
     $.getJSON('/static/page/quotes.json', function(data) {
         var q = Math.floor(Math.random() * data.quotes.length);
         $("#quote").html("\"" + data.quotes[q].text + "\"");

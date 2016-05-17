@@ -220,11 +220,7 @@ function calendar(){
         }
     }
 
-    /* Start a loop, creating empty tags (with correct classes/ids) and when the first day and weekday match the current itteration
-     * start adding in relevant information.
-    */
-    /* When generating tags (via a loop) to represent days, give them an id of
-     * the date so the Google Calendar function will be able to easily mark 
-     * event dates.
-     */
+    //Get current day and set tag
+    var d = document.getElementById(date.getDate())
+    d.id = "current-day";
 }

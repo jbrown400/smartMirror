@@ -186,7 +186,7 @@ function calendar(){
     dateFirstDay = new Date(currentYear, currentMonth, 1);
     $("#current-day").html(weekdayNames[dateFirstDay.getDay()]);
 
-
+    /*
     for (i = 0; i < 7; i++){
         var row = document.createElement('div');
         row.className="week-col";
@@ -199,7 +199,7 @@ function calendar(){
             row.appendChild(day);
         }
     }
-        
+    */
     /*
     // for loop for weeks
     for (i = 0; i < 7; i++){

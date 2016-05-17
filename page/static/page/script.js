@@ -184,36 +184,42 @@ function calendar(){
 
     //Get the weekday of the first day of the month
     dateFirstDay = new Date(currentYear, currentMonth, 1);
-    $("#current-day").html(weekdayNames[dateFirstDay.getDay()]);
+    //$("#current-day").html(weekdayNames[dateFirstDay.getDay()]);
 
-    /*
+    //Get the last day of the month
+    dateLastDay = new Date(currentYear, currentMonth + 1, 0);
+    //Create tags with necessary ids and classes
     for (i = 0; i < 7; i++){
         var row = document.createElement('div');
-        row.className="week-col";
+        row.className = "week-col";
+        row.id = weekdayNames[i];
         document.getElementById("weeks").appendChild(row);
-        // for loop for days
-        for (i = 0; i < 5; i++){
-            var day = document.createElement('div');
-            day.className="week-col";
-            day.innerHTML = "5";
-            row.appendChild(day);
+        for (j = 0; j < 5; j++){
+            var col = document.createElement('div');
+            col.className = "week-row";
+            col.id = (1 + i) + (j * 7);
+            document.getElementById(weekdayNames[i]).appendChild(col);
         }
     }
-    */
-    /*
-    // for loop for weeks
-    for (i = 0; i < 7; i++){
-        var row = document.createElement('div');
-        row.className="week-row";
-        document.getElementById("weeks").appendChild(row);
-        // for loop for days
-        for (i = 0; i < 5; i++){
-            var day = document.createElement('div');
-            day.className="week-col";
-            day.innerHTML = "5";
-            row.appendChild(day);
+
+    //Set current day and fill tags with day numbers
+    var start = false;
+    var count = 1;
+    for (i = 1; i < 36; i++){
+        var x = document.getElementById(i);
+        parentDiv = x.parentNode;
+        if(weekdayNames[dateFirstDay.getDay()] == parentDiv.getAttribute('id')){
+            start = true;
         }
-    }*/
+        if(start){
+            x.innerHTML = count;
+            count++;
+        }
+        if(weekdayNames[dateLastDay.getDay()] == parentDiv.getAttribute('id') && i > 28){
+            break;
+        }
+    }
+
     /* Start a loop, creating empty tags (with correct classes/ids) and when the first day and weekday match the current itteration
      * start adding in relevant information.
     */

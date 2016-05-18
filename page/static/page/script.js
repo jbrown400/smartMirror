@@ -108,7 +108,7 @@ update = function() {
                 cal = item;
             });
             for(i = 0; i < 10; i++){
-                if(cal[i].summary === "Internet Bill" || cal[i].summary === "Pay Day"){
+                if(cal[i].summary === "Internet Bill" || cal[i].summary === "Pay Day" || cal[i].summary === "Run"){
                     continue;
                 }
                 var tmp = "#event" + i;

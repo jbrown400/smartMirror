@@ -99,6 +99,28 @@ update = function() {
         $("#author").html(data.quotes[q].author);
     });
 
+    $.ajax({
+        url: "https://www.googleapis.com/calendar/v3/calendars/justin.brown400@gmail.com/events?orderBy=starttime&singleEvents=true&alt=json&maxResults=10&timeMin=2016-" + gTime + "T10%3A00%3A00-07%3A00&key=" + GOOGLE_KEY + "",
+        dataType: 'json',
+        timeout: 5000,
+        success: function(data, status) {
+            $.each(data, function(i, item) {
+                cal = item;
+            });
+            for(i = 0; i < 10; i++){
+                if(cal[i].summary === "Internet Bill" || cal[i].summary === "Pay Day"){
+                    continue;
+                }
+                var tmp = "#event" + i;
+                var simpleDate = new Date(Date.parse(cal[i].start.dateTime));
+                $(tmp).html(monthNames[simpleDate.getMonth()] + "/" + simpleDate.getDate() + " -- " + cal[i].summary);
+                $("#test").html(gTime);
+            }
+        },
+        error: function() {
+            $("#event").html('There was an error loading the data.');
+        }
+    });
     calendar();
 }
 

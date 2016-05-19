@@ -100,7 +100,7 @@ update = function() {
     });
 
     $.ajax({
-        url: "https://www.googleapis.com/calendar/v3/calendars/justin.brown400@gmail.com/events?orderBy=starttime&singleEvents=true&alt=json&maxResults=10&timeMin=2016-" + gTime + "T10%3A00%3A00-07%3A00&key=" + GOOGLE_KEY + "",
+        url: "https://www.googleapis.com/calendar/v3/calendars/justin.brown400@gmail.com/events?orderBy=starttime&singleEvents=true&alt=json&maxResults=10&timeMin=2016-" + gTime + "T" + g.getHours()  + "%3A00%3A00-07%3A00&key=" + GOOGLE_KEY + "",
         dataType: 'json',
         timeout: 5000,
         success: function(data, status) {

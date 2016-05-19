@@ -113,7 +113,7 @@ update = function() {
                 }
                 var tmp = "#event" + i;
                 var simpleDate = new Date(Date.parse(cal[i].start.dateTime));
-                $(tmp).html(monthNames[simpleDate.getMonth()] + "/" + simpleDate.getDate() + " -- " + cal[i].summary);
+                $(tmp).html(cal[i].start.dateTime.slice(11, 16) + " (" + monthNames[simpleDate.getMonth()] + "/" + simpleDate.getDate() + ") : " + cal[i].summary);
                 $("#test").html(gTime);
             }
         },

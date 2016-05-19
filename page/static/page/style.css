@@ -44,7 +44,7 @@ body {
     flex: 4;
 }
 
-
+/* --- Calendar --- */
 #calendar {
     height: 35%;
 }
@@ -92,18 +92,21 @@ body {
 /* --- Specific Event --- */
 #upcoming-events {
     height: 30%;
-    margin-left: 20%;
-    border: 2px solid red;
+    margin-top: 10%;
+    margin-left: 10%;
     display: flex;
     flex-direction: column;
 }
 
 .event {
-    border: 1px solid blue;
     flex: 1;
+    margin-right: 5%;
+    font-size: 14pt;
+    text-align: right;
 }
 
 
+/* --- Current weather --- */
 #current-day {
     background-color: #FFFFFF;
     color: #000000;
@@ -118,6 +121,7 @@ body {
 }
 
 
+/* --- Quote ---*/
 #quote-box {
     margin: 5%;
 }
@@ -136,6 +140,7 @@ body {
 }
 
 
+/* --- Weather Forecast --- */
 #icon {
     margin-top: -15%;
 }

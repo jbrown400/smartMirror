@@ -235,14 +235,14 @@ function calendar(){
         }
         if(start){
             x.innerHTML = count;
+            //Sets the current day
+            if(count == date.getDate()){
+                x.id = "current-day";
+            }
             count++;
         }
         if(weekdayNames[dateLastDay.getDay()] == parentDiv.getAttribute('id') && i > 28){
             break;
         }
     }
-
-    //Get current day and set tag
-    var d = document.getElementById(date.getDate())
-    d.id = "current-day";
 }

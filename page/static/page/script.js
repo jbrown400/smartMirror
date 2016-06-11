@@ -29,7 +29,7 @@ update = function() {
     gTime = monthNames[g.getMonth()] + "-" + g.getDate();
     //Gets and sets current conditions
     $.ajax({
-        url: "http://api.wunderground.com/api/" + WEATHER_KEY + "/conditions/q/MO/Rolla.json",
+        url: "http://api.wunderground.com/api/" + WEATHER_KEY + "/conditions/q/AR/Rogers.json",
         dataType: 'json',
         timeout: 5000,
         success: function(data, status) {
@@ -47,7 +47,7 @@ update = function() {
 
     //Gets and sets the forecast
     $.ajax({
-        url: "http://api.wunderground.com/api/" + WEATHER_KEY + "/forecast/q/MO/Rolla.json",
+        url: "http://api.wunderground.com/api/" + WEATHER_KEY + "/forecast/q/AR/Rogers.json",
         dataType: 'json',
         timeout: 5000,
         success: function(data, status) {
